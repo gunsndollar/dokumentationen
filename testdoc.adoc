@@ -1,0 +1,280 @@
+= Test Dokument
+
+:encoding: utf-8
+:lang: de
+:keywords: asciidoc, tables, documentation
+:revision: 0.5.0
+:copyright: Gunsndollar
+:author: GnD
+:email: gunsndollar@googlemail.com
+:toc:
+:toc-titel: Inhaltsverzeichnis
+
+Copyright: {copyright} +
+Author: {author} +
+eMail: {email} +
+Version: {revision} +
+//vim set: syntax=asciidoc
+
+
+erste *zeile* text
+zweite zeile text +
+dritte +zeile+ text
+
+vierte zeile
+
+*das ist druckschrift*
+_das ist Kursiv_
+'das ist kein MONOtext'
+`das ist MONOTEXT`
+
+*[]
+*[*]
+
+
+
+== headline 1
+
+some chars
+
+== Dita Example
+
+[ditaa]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+....
+
+== Meine Eigene Grafik
+
+[ditaa]
+....
+                          +----------+
+                          |          |
+                          |          |
+                          |          |
+                          |          |
+                          |          |
+                          |          |
+              +-----------+----------+------------+
+              |                                   |
+              |                                   |
+              |                                   |
+              |                                   |
+              |                                   |
+              |                                   |
+              |                                   |
+              |                                   |
+              |                                   |
+              |                                   |
++-------------+-----------------------------------+--------------+
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
++----------------------------------------------------------------+
+
+....
+[ditaa]
+....
++----------------+                 +--------+
+|                |                 |        |
+|                |                 |        |
+|                |                 |        |
+|                |                 |        |
++-------+--------+                 +----+---+
+        |                               ^
+        |                               |
+        |                               |
+        |        +-----------------+    |
+        |        |                 |    |
+        |        |                 |    |
+        +------->+                 +----+
+                 |                 |
+             XXXXX--X-XXX-X-X-XX-X-XX
+             X XX XXX XXX X X  XXXX  XX
+            XX X  X XX X  X XX  XX XX  XXX
+           +X+ XXX+ XX-X +X-+X+--X +XX+ +XX
+           | | |  | |  | |  | |  | |  | | |
+           | | |  | |  | |  | |  | |  | | |
+           | | |  | |  | |  | |  | |  | | |
+           +-+ +--+ +--+ +--+ +--+ +--+ +-+
+
+....
+Damit die Grafik angezeigt wird, wird vorher ein in klammer gesetzen Befehl benötigt
+
+----
+_[ditaa]_
+----
+== Ohne Ditaa 
+....
+
+                     +------------------------+
+                     |                        |
+                     |------------------------|
+                     +------------------------+
+                     |                        | +-----------------------------+
+                     |                        +-|------------->               |
+                     |                        | |-----------------------------|
+                     |                        | |                             |
+                     +---------+--------------+ |                             |
+                               |                |                             |
+                               |                |                             |
+                               |                |                             |
+                               |                |                             |
+                               |                +-----------------------------+
+                               |
+                               +-------------+
+....
+
+== mit Ditaa
+[ditaa]
+....
+
+
+
+                     +------------------------+
+                     |                        |
+                     |------------------------|
+                     +------------------------+
+                     |                        | +-----------------------------+
+                     |                        +-|------------->               |
+                     |                        | |-----------------------------|
+                     |                        | |                             |
+                     +---------+--------------+ |                             |
+                               |                |                             |
+                               |                |                             |
+                               |                |                             |
+                               |                |                             |
+                               |                +-----------------------------+
+                               |
+                               +-------------+
+....
+
+die Grafiken können von hand erledigt werden indem man die zur verfügung gestellten zeichen verwendet oder man nutz die webseiten:
+
+----
+http://stable.ascii-flow.appspot.com/#Draw
+----
+
+oder aber auch:
+ 
+----
+http://asciiflow.com/
+----
+
+Beide seiten führen zum gewünschten ergebniss
+
+
+Bilder können auch hinzugefügt werden
+
+----
+image::./dateispeicherort
+----
+image::Firefox_wallpaper.png[Firmenlogo]
+
+== headline 2 
+
+more chars
+
+=== headline 2.1
+
+some more chars
+
+==== obst
+
+* apfel
+* birne
+* kiwi
+
+=== Gemuese
+
+. Kohl
+.. Blumenkohl
+... krauser blumenkohl
+... Blauer Blumenkohl
+. Zwiebeln
+. Moehren
+
+=== Ein Befehl
+
+[source,bash]
+.Ausgabe von Zeichen via HEX wert
+----
+echo -e "\x41" <1>
+----
+
+<1> es muessen doppelte anführungszeichen verwendet werden.
+
+
+== Personen
+
+[width="60%",cols="<50,<30,>20",options="header,footer"]
+|===
+| Name
+| Geburtsdatum
+| Schuhgroesse
+
+| Peter
+| 20.02.1980	
+| 45
+
+| Ute
+| 01.05.1976	
+| 38
+
+|=== 
+ 
+
+== Der VI
+
+include::vi.adoc[]
+
+
+== First steps
+
+include::FirstSteps.adoc[]
+
+
+== Befehle Ungeordnet
+
+include::Befehlssammlung.adoc[]
+
+== ruby
+
+include::ruby.adoc[]
+
+== Tmux
+
+include::Tmux.adoc[]
+
+== Bash
+
+include::bash.adoc[]

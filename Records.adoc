@@ -1,0 +1,25 @@
+=== Aufzeichnungen IT Vorkurs
+
+:encoding: utf-8
+:lang: de
+:keywords: asciidoc, tables, documentation
+:revision: 0.5.0
+:copyright: Gunsndollar
+:author: GnD
+:email: gunsndollar@googlemail.com
+:toc:
+:toc-titel: Inhaltsverzeichnis
+
+Copyright: {copyright} +
+Author: {author} +
+eMail: {email} +
+Version: {revision} +
+//vim set: syntax=asciidoc
+
+== First steps
+
+include::FirstSteps.adoc[]
+
+* Innerhalb dieser Shell Kann eine Tmux session erstellt werden
+
+include::Tmux.adoc[]

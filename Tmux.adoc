@@ -1,0 +1,104 @@
+=== Tmux 
+
+== Einsatzmöglichkeiten
+
+Tmux verwaltet erzeugte mehrfach sitzungen untereinander.
+Eine Shell wird dann Für alle erzeugt und verwaltet.
+Diese sitzungen können Detached (getrennt) werden oder aber auch Attached(weiter geführt) werden.
+
+'"Dies ist vorallem in Projekt Arbeiten wertvoll"'
+
+Um eine Tmux session zu öffnen wird der befehl
+
+----
+tmux
+----
+verwendet.
+
+tmux kann auch bennant werden indem man den befehl
+
+----
+tmux new -s *myname*<1>
+----
+
+benutzten.
+
+Sich mit einer Tmux session verbinden (anhängen) funktioniert mit dem befehl
+
+----
+tmux a #(oder at, or attach)
+----
+
+Um direkt in die sitzung zu kommen die benannt wurde, benutzt man
+
+----
+tmux a -t *myname*<1>
+----
+
+die sessions können auch aufgelistet werden
+
+----
+tmux ls
+----
+
+und direkt wieder beendet mit dem befehl
+
+----
+tmux kill-session -t *myname*<1>
+----
+
+hat man mehrere Tmux sessions offen, wird der befehl
+
+----
+tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+----
+
+== Steuerungen Im Tmux
+
+* die Tastenkombination STRG + B initialisieren die nachfolgenden Kommandos
+
+[width="60%",cols="<50,>50",options="header,footer"]
+
+|===
+|Taste
+|Befehl
+
+|D
+|Detach - das fenster Löst sich 
+
+|C
+|Create - Eine neue Shell erzeugen
+
+|&
+|Kill - Beenden des Fensters (bestätigung mit Y)
+
+|,
+|Rename - Umbennen des aktuellen Fenstertitels
+
+|W
+|Window - Liste der Fenster anzeigen; Fenster wechseln
+
+|L
+|Last - wechsel zu dem letzen aktiven Fenster
+
+|P
+|Previous - Wechsel zu dem vorherigen Fenster
+
+|1-9
+|Switch - Wechsel Zu Nummer ...
+
+|"
+|Pane leftright - Horizontales teilen des Fensters
+
+|%
+|Pane updown - Vertikales teilen Des Fensters
+
+|X
+|Close - Schliesse das aktuelle Fenster
+
+|N
+|New Window - hiermit wird ein neues fenster erzeugt
+
+|F
+|Find Window - ein bennantes Fenster finden
+|===

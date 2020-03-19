@@ -1,0 +1,101 @@
+
+=== Ersteinrichtung des Gemeinsamen Projektes
+
+* Host oeffnet den Server
+
+* dann anmelden in der Konsole
+----
+ssh tn@(ip des Hosts)
+----
+
+* anschliessend nach dem Login muss eine Tmux session beigetreten werden, solange es noch keine gibt, kann auch eine neue Tmux session erstellt werden.
+
+----
+Tmux - im falle einer geöffneten Tmux session angeben unter welchem namen diese läuft - Tmux a
+----
+
+um herauszufinden welchen Benutzerstatus man besitzt
+
+----
+id
+----
+
+muss man software installieren so muss man den status ändern auf ROOT (0)
+
+----
+sudo -iu root
+----
+
+anschliessend noch benutzerkennwort eingeben und root rechte geniessen!!!
+
+sucht man jetzt eine anwendung kann man diesen befehl nutzen
+
+----
+apt-cache search (suchbegriff)
+----
+
+die jetzt gesuchte software wird mit dem befehl
+
+----
+apt-get istall (programm)
+----
+
+installiert, ebenfalls wichtig um software updates zu entdecken ist der befehl
+
+----
+apt-get update
+----
+
+nachfolgend werden jetzt die aktuellen updates angezeigt aus allen vorhandenen programmen.
+Um die updates ausführen zu können wird der befehl
+
+----
+apt-get upgrade
+----
+
+verwendet!
+
+== Dateipfade
+
+----
+cd
+----
+
+steht für das ändern des Dateipfades. 
+
+----
+cd/.
+----
+
+steht in dem falle für die ansicht des AKTUELLEN ORDNERS
+
+----
+cd/..
+----
+
+steht hier für den Übergeordneten Ordner
+
+befehl zum versenden von dateien innerhalb eines netzwerks
+
+----
+scp -r (dateiname der versand werden soll) tn@172.24.0.174:/home/tn/doc
+----
+
+ 
+
+sollten diese rechte aber zu viel des guten sein so kann man sich mit dem befehl
+
+----
+exit
+----
+
+wieder als ROOT ausloggen
+
+
+um herauszufinden in welcher shell man sich bewegt reicht der befehl
+
+----
+echo $$
+----
+
+

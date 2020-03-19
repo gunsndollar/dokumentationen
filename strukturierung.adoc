@@ -1,0 +1,44 @@
+= Asciidoctor
+//die überschrift//
+
+<meta>
+:encoding: utf-8
+:lang: de
+:keywords: asciidoc, tables, documentation
+:revision: 0.5.0
+:copyright: xXx
+:author: xXx
+:email: xXx@xxx.xx
+:toc:
+:toc-titel: Inhaltsverzeichnis
+
+Copyright: {copyright} +
+Author: {author} +
+eMail: {email} +
+Version: {revision} +
+//in diesem falle werden die benutzerdaten verlangt
+
+== Einführung
+//wie wird die software bzw die aktuellen themen verwendet
+
+== Installation/Setup
+//wie bekomme ich das programm auf mein Rechner Bzw aufs system was vorhanden ist
+
+=== Vorbereitung
+//in dem falle asciidoctor werden die vorbereitungen zum arbeiten mit dem asciidoc erfordert
+//z.b. die installation von python oder installation von extra software
+
+== Anwendung
+//anwendungsbereiche, in diesem falle welche datei typen lassen sich aufrufen, unter welchem system läuft die software o.a.
+
+=== Formatierungen
+//bitte nachfüllen bei ansicht
+
+=== Ausgabe
+//in welchen sprachen werden die dateien ausgegeben
+
+=== Formate
+//welche formate können erzeugt werden!
+
+== Links
+//hier werden die links beigefügt

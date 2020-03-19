@@ -1,0 +1,50 @@
+=== Movement Keys
+
+[width="60%",cols="<20,<30",options="header,footer"]
+|===
+|Key 
+|Action
+|H
+|Left
+|J
+|Down
+|K
+|Up
+|L
+|Right
+|===
+
+=== Actions
+
+[width="60%",cols="<20,<30",options="header,footer"]
+|===
+|Key
+|Action
+|Y
+|Copy
+|P
+|Paste
+|D
+|Delete Bar
+|X
+|Delete a Letter
+|===
+
+=== Commands
+
+[width="60%" ,cols="<20,<30" ,options="header,footer"]
+|===
+|Key
+|Action 
+
+|:w
+|Write
+
+|:q
+|Quit
+
+|:set number
+|Show barnumbers
+
+
+|===
