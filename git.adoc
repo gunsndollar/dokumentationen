@@ -1,3 +1,98 @@
-==== git
+= Git
+==== Git
+Git erstellt versionen von einer Datei.
+Man nutzt es vorallem in der IT, um gesammelte werke miteinander zu bearbeiten. 
+Wir erzeugen hier mal Beispielsweise ein Projekt: *_PROJECTone_*
 
-== 
+Zuerst muss git gesagt werden das es jetzt eine überwachung erzeugen soll
+
+----
+git init
+----
+ 'initialisiert eine erzeugung des ordners _.git_
+        * in diesem ordner befinden sich git config dateien.
+
+----
+git status
+----
+'den aktuellen status anzeigen lassen.
+ * man sieht in diesem Feld den aktuellen status.
+
+Jetzt haben wir herausgefunden, das es dateien gibt, die nicht unter git kontrolle stehen.
+
+[source,bash]
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.bash_history
+	.bash_logout
+
+_nothing added to commit but untracked files present (use "git add" to track)_
+[source,bash]
+
+Die Dateien müssen nun geaddet werden. 
+Hierzu ein beispiel!
+
+=== Erste Schritte mit dem git
+
+Um zunächst mit git arbeiten zu können muss man aber nicht nur die befehle beherrschen. +
+Es bedarf eines Login der erstellt werden muss: www.github.com
+
+mit diesen login dateien kann es dann schon weiter gehen.
+
+möchte man jetzt ein ordner unter *git kontrolle* stellen dann bedarf es erstmal in diesen ordner zu wechseln.
+
+----
+cd /home/gunsndollar/PROJECTone/
+----
+
+Unser Projekt heist 'ONE' also nehme ich den erxsten buchstaben von _P_rojekt, und das wort _ONE_ als Datei-name
+
+Diese simple datei erzeuge ich mit dem VI und nenne sie 'PONE.adoc'
+
+aktueller inhalt von PROJECTone: 'PONE.adoc'
+
+wenn wir starten brauchen wir die git kontrolle!
+
+----
+git init
+----
+
+Mit diesem Befehl, man eine Versionierung einleiten. +
+
+diese versionierung muss jetzt eingerichtet werden im github
+
+auch hier wird ein neues repository angelegt und miteinander verknüpft.
+
+Auf der Github Website lassen sich Repositorys erstellen!
+Unser Repository was wir jetzt erstellt haben trägt den titel *Prone*
+das ist unser neues verzeichnis auf _GITHUB_
+
+doch zuerst wofür das ganze. ++
+sagen wir _PROJECTone_ ist ein gemeinsames Programmier projekt von 22 entwicklern.
+alle haben daten und auch programmier scripts die nicht alle auf einen stand sind. +
+jetzt laden die 22 menschen dort ihre daten hoch und können nun gemeinsam an projekten arbeiten. auch änderungen werden in den commits angezeigt. +
+Das macht man aus dem grunde weil es manchmal Programmierer gibt die in ländern beispielsweise leben in denen sie nur alle 14tage ein zugang zum internet bekommen.
+
+----
+git add .
+----
+'fügt alle dateien aus dem Ordner zu git hinzu.
+ * man kann auch mit der veränderung der endung [source,bash] . [source,bash] zu einer datei, eben diese nur unter git kontrolle stellen.
+
+....
+----
+[source,bash]git add pone.adoc[source,bash]
+----
+....
+
+Das ist jetzt unsere grund datei. sie ist bis jetzt nur unter kontrolle von git. 
+um jetzt mit dem tool arbeiten zu können benötigen wir:
+* login
+* git clone
+* 
+
