@@ -1,0 +1,179 @@
+GIT
+Autor und E-Mail Adresse hinzufügen
+Namen und E-Mail Adresse hinzufügen, damit Git einen Commit einem Autor zuordnen kann
+
+git config --global user.name "Max Mustermann"
+
+git config --global user.email "email@email.de
+
+Ein Repository anlegen
+Damit Git die Dateien verwalten kann, muss ein Repository für das Projekt angelegt werden
+
+git init "Projektname"
+
+→ Zunächst erstellt Git das Verzeichnis "Projektname"/, falls es noch nicht existiert. Danach initialisiert Git ein leeres Repository in diesem Verzeichnis und legt dafür ein Unterverzeichnis .git/ an, in dem interne Daten verwaltet werden. Sollte das Verzeichnis beispiel/ bereits existieren, erstellt Git darin ein neues Repository. Gibt es bereits sowohl das Verzeichnis wie auch ein Repository, macht Git gar nichts.
+Den aktuellen Status anzeigen
+in das Verzeichnis wechseln und den aktuellen Status anzeigen
+
+cd "Projektname"
+
+git status
+
+→ Git gegistriert das sich Dateien in dem Verzeichnis befinden, aber noch nicht unter Git Verwaltung stehen. untracked → Git gibt einen Hinweis aus, das man vor dem ersten Commit steht, Git aber nichts gefunden hat. → Git liefert noch einen Hinweis welche Schritte sich als nächstes anbieten
+Erster Commit
+Eine Datei Git zur Verwaltung übergeben
+
+git add "Datei"
+
+→ Git wird die Veränderungen — also unsere neue Datei — beim nächsten Commit übernehmen. Allerdings ist dieser Commit noch nicht vollzogen — wir haben ihn bisher lediglich vorbereitet. → m genau zu sein, haben wir die Datei dem 'Index' hinzugefügt, einer Zwischenstufe, in der Sie Veränderungen, die in den nächsten Commit einfließen sollen, sammeln.
+mit dem Kommando git commit den ersten Commit erstellen und mit der Option -m wird eine Commit Message übergeben.
+
+git commit -m "erste Version"
+
+→ Git bestätigt, dass der Vorgang erfolgreich abgeschlossen wurde und die Datei von nun an verwaltet wird.
+jetzt lässt sich mit git status das ganze nochmal überprüfen. Git sollte jetzt ausgeben das, dass Repository sauber ist.
+
+git status
+On branch master
+nothing to commit, working directory clean
+
+Vergleichen von Revisionen
+Mit den Dateien des "working trees" bzw. des Index vergleichen
+
+git diff                         # Vergleich Working Tree - Index
+git diff [rev]                   # Vergleich Working Tree - [rev]
+git diff --cached                # Vergleich Index - HEAD
+git diff --cached [rev]          # Vergleich Index - [rev]
+
+Revisionen vergleichen
+
+git diff [rev1] [rev2]           # Vergleich rev1 und rev2
+git diff [rev1]..[rev2]          # Analog, Vergleich rev1 und rev2
+git diff [rev1]..                # Vergleich rev1 und HEAD
+git diff [rev1]..[rev2] -- src/  # Unterschiede in src/ zwischen rev1 und rev2
+
+Anzeigen der Commit-Historie
+Nachdem mehrere Commits erstellt wurden, kann man bei Bedarf zurück schauen und sehen was alles passiert ist mit
+
+git log
+
+→ Standardmäßig listet git log, ohne Argumente, die in diesem Repository vorgenommenen Commits in umgekehrter chronologischer Reihenfolge auf, d.h. die neuesten Commits werden als erstes angezeigt.
+GitHub.com
+
+GitHub ist ein Onlinedienst, der Software-Entwicklungsprojekte auf seinen Servern bereitstellt (Filehosting). Namensgebend war das Versionsverwaltungssystem Git.
+Um einen Githubaccount anzulegen muss man zuerst die Homepage von Github aufrufen
+
+https://github.com/
+
+Auf der Seite muss man sich nun einen Account erstellen. Mit zu Hilfenahme seiner Emailadresse und einem Pseudonym für Github, erstellt man sich nun seinen eigenen Account. Nun verifiziert man seinen Account über seine Emailadresse, damit man mit Github arbeiten kann.
+Create a new repository
+
+Ein repository ist eine Art Projekt, dem man zuerst einen Namen geben muss. Dieser sollte sich auf den Inhalt beziehen, damit man im nachhinein seine Dateien wiederfinden kann.
+
+In der Beschreibung kann man nun etwas eintragen, was den Inhalt beschreibt, ist aber nicht zwingend erforderlich.
+
+Es gibt öffentlich und private repositorys. Wenn man sein repository auf public stellt, kann jeder darauf zugreifen. Private repositorys kann man allerdings nur mit einem kostenpflichtigen Account erstellen.
+
+Im nächsten Schritt fragt er danach, eine README Datei anzulegen. Dies ist sinnvoll, da dort wichtige Informationen hinterlegt werden können.
+Clone a Repository
+Um ein repository zu clonen, muss man nun den Link aus der jeweiligen repository von github kopieren und mit dem Befehl ins Zielverzeichnis kopieren.
+
+git clone *Link von GitHub.com einfügen*
+
+Dieses Verzeichnis steht nun automatisch unter der Kontrolle von Git.
+ein Repository vom PC auf GitHub.com uploaden
+
+git push
+
+ein Repository von GitHub.com auf den PC downloaden
+
+git pull
+
+Projekte mit Git synchronisieren
+Verzeichnis erstellen, unter Git Kontrolle stellen und mit GitHub synchronisieren
+Zuerst erstellen wir ein gewünschtes Verzeichnis mit dem Befehl
+
+mkdir "name"
+
+Anschließend wechseln wir in das Verzeichnis hinein
+
+cd "name"
+
+Um das Verzeichnis unter Gitkontrolle zu stellen, benutzen wir den Befehl
+
+git init
+
+Dann erstellen wir eine text Datei
+
+vi beispiel.txt
+
+Die erstellte Datei zu git hinzufügen
+
+git add beispiel.txt
+
+Dateien synchronisieren
+Um eine remote git zu erstellen, geben wir nun den Befehl, mit dem dazugehörigen Link des Administrators des Projektes auf github, ein.
+
+git remote add origin "Link von Github repository"
+
+Im Anschluss laden wir die Dateien herunter und synchronisieren diese mit unserem System
+
+git pull origin master
+
+Dateien von unserem System mit github synchronisieren
+Zuerst muss die gewünscht Datei commitet werden, dazu geben wir den Befehl ein.
+
+git commit -m "Änderung"
+
+Nun zeigt er die gewänderte Datei unter git status an.
+Im Anschluss synchronisieren wir unsere Systemdaten mit github
+
+git push -u origin master
+
+Git Branch
+
+Git-Branches sind quasi Verweise auf einen Snapshot deiner Änderungen. Wenn du ein neues Feature hinzufügen oder einen Fehler beheben möchtest, legst du einen neuen Branch an, der deine (großen oder kleinen) Änderungen enthält. Auf diese Weise ist es weniger wahrscheinlich, dass unstabiler Code in die Haupt-Codebasis gemergt wird, und du hast die Möglichkeit, deinen zukünftigen Verlauf zu bereinigen, bevor du den Merge in den Haupt-Branch durchführst.
+Führt alle Branches in deinem Repository auf.
+
+git branch
+
+Mit diesem Befehl erstellst du einen neuen Branch mit dem Namen, den du für <branch> angibst.
+
+git branch <branchname>
+
+und mit diesem Befehl wechselst den Branch.
+
+git checkout <Branchname>
+
+Datien vom github runterladen.
+
+git pull origin <branchname>
+
+Datein zu github Hochladen.
+
+git push origin <branchname>
+
+um zu mergen muss man als branch master sein.
+
+git merge <branchname>
+
+Git Tag
+
+Git Tags bieten eine einfache Möglichkeit, um bestimmte Revisionen eines Repos zu kennzeichnen. Sie können z.B. für die Kennzeichnung einer neuen Release-Version benutzt werden. Dadurch wird ein wichtiger Punkt der Entwicklung permanent markiert und ist einfach wieder zu erkennen.
+Tags erstellen:
+
+Ein neuer Tag kann mit dem Kommando "git tag" erstellt werden. Es werden zwei Arten von Tags unterschieden:
+
+    Annotated Tags: Diese Tags resultieren immer in einem eigenen Commit und bringen Informationen wie Tagger, Email, Datum oder Signatur mit.
+
+Command.
+
+git tag -a -m "Beschreibung"
+
+    Lightweight Tags: Diese Art von Tags sind eine simple Referenz auf einen Commit (der Hash-Wert wird als Tag referenziert). Extra-Information werden zu diesen Tags nicht hinzugefügt.
+
+Command.
+
+git tag <versionsname>-lw
+
+
