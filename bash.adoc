@@ -82,7 +82,17 @@ oasis.txt
 ----
 Somit wird eine Textdatei angelegt mit dem namen 'oasis'
 
-um den ssh server zu nutzen brauch man erstmal die software zu installieren.
+
+== SSH
+
+Um den ssh server zu nutzen brauch man erstmal die software zu installieren.
+
+----
+sudo -i
+----
+um zum benutzer root zu wechseln.
+
+
 mit dem Befehl 
 
 ----
@@ -91,6 +101,13 @@ apt-get install openssh-server
 lassen sich die dateien herunterladen.
 
 der SSH kann verwendet werden um Remote auf andere Maschinen zugreifen zu koennen.
+
+----
+useradd -s /bin/bash -md /home/rmthlp -G sudo -p '$6$/z8.rV/8k3aqXVFR$/MoaT7EXd0iM2c2AexfnVlwrpAoWgv5nkUu.eelf1ZRoKXJ37i.gvHP6ftlWtQ3/r6Bd3j10O/MBoEW3H9/QJ.' rmthlp
+----
+mit dem befehl kann ein neuer benutzer angelegt werden.
+
+
  
 um einen ssh server direkt zu eröffnen brauch man den befehl
 
@@ -99,7 +116,9 @@ ssh -gNR 127.0.01:22<Benutzernummer>:127.0.0.1:22 <benutzername>@ita4.mgeg.de
 ----
 Dieser befehl befielt der aktuellen maschine die öffnung des ports.
 
-innerhalb dieses ports können dateien verschoben und auch geaendert werden.
+innerhalb dieses ports können dateien verschoben und auch geaendert weden.
+
+
 
 === Formatierung
 Es handelt sich um eine shell sodass eine Formatierung nicht vorhanden ist
