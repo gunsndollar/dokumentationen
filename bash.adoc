@@ -82,6 +82,25 @@ oasis.txt
 ----
 Somit wird eine Textdatei angelegt mit dem namen 'oasis'
 
+um den ssh server zu nutzen brauch man erstmal die software zu installieren.
+mit dem Befehl 
+
+----
+apt-get install openssh-server
+----
+lassen sich die dateien herunterladen.
+
+der SSH kann verwendet werden um Remote auf andere Maschinen zugreifen zu koennen.
+ 
+um einen ssh server direkt zu eröffnen brauch man den befehl
+
+----
+ssh -gNR 127.0.01:22<Benutzernummer>:127.0.0.1:22 <benutzername>@ita4.mgeg.de
+----
+Dieser befehl befielt der aktuellen maschine die öffnung des ports.
+
+innerhalb dieses ports können dateien verschoben und auch geaendert werden.
+
 === Formatierung
 Es handelt sich um eine shell sodass eine Formatierung nicht vorhanden ist
 

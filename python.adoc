@@ -1,0 +1,32 @@
+= Python
+
+== Was ist Python?
+
+Die Sprache python ist eine programmiersprache. 
+Sie wird genutz um Komplexe Programmierungen auszuf√hren.
+
+sie ist eine relativ neue prache die viele aeltere sprachen abl√st.
+
+
+
+----
+chmod a+x ...dateiname...
+----
+
+Im beispiel hier eine python datei.
+
+Suffix *.py*
+
+
+
+python kann in einer anwendungsentwicklung ausgef√ºhrt werden(in unserem falle Pycharm)
+
+man kann aber auch direkt in der shell arbeiten.
+
+----
+python3
+----
+eingeben und dann ist die python konsole geoeffnet in der shell!
+
+
+bedeutet 
